@@ -1,195 +1,211 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Agostina Costa | BDM - EBC Broker</title>
+  <meta name="description" content="Asesoro a traders, inversionistas e Introducing Brokers en LATAM e internacional. Socia estratégica de EBC Financial Group, bróker global y regulado." />
   <style>
-    html {
-      scroll-behavior: smooth;
+    :root{
+      --brand:#0a1f44;
+      --accent:#00bcd4;
+      --light:#f8fafc;
+      --dark:#1f2937;
     }
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #222;
-      background-color: #fff;
-      line-height: 1.6;
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Segoe UI',sans-serif;
+      background:#fff;
+      color:var(--dark);
+      line-height:1.6;
     }
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: #0a1f44;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    header{
+      background:var(--brand);
+      color:#fff;
+      position:sticky;top:0;z-index:1000;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
     }
-    header h1 {
-      font-size: 1.1rem;
-      margin: 0;
+    .nav{
+      max-width:1200px;margin:auto;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:1rem;
     }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 12px;
-      font-weight: 500;
+    nav a{
+      color:#fff;text-decoration:none;
+      margin:0 10px;font-weight:600;
+      transition:.2s;
     }
-    nav a:hover {
-      color: #00bcd4;
-      transition: color 0.3s;
+    nav a:hover{color:var(--accent)}
+    .lang{
+      display:flex;gap:8px;
     }
-    .lang-switch {
-      background-color: #00bcd4;
-      color: white;
-      border: none;
-      padding: 4px 10px;
-      border-radius: 4px;
-      cursor: pointer;
-      margin-left: 6px;
+    .lang button{
+      border:none;border-radius:50px;
+      background:var(--accent);
+      color:#fff;font-weight:bold;
+      padding:6px 12px;
+      cursor:pointer;transition:.2s;
     }
-    section {
-      padding: 100px 20px;
-      max-width: 900px;
-      margin: auto;
+    .lang button:hover{filter:brightness(.9)}
+    .hero{
+      background:linear-gradient(135deg,var(--brand),var(--accent));
+      color:#fff;text-align:center;
+      padding:120px 20px 80px;
     }
-    h2 {
-      color: #0a1f44;
-      margin-bottom: 15px;
-      border-bottom: 2px solid #00bcd4;
-      display: inline-block;
-      padding-bottom: 5px;
+    .hero h1{font-size:2rem;margin-bottom:15px}
+    section{padding:80px 20px;max-width:1100px;margin:auto}
+    h2{
+      color:var(--brand);
+      margin-bottom:20px;
+      border-bottom:3px solid var(--accent);
+      display:inline-block;
+      padding-bottom:6px;
     }
-    .hero {
-      background: linear-gradient(to right, #0a1f44, #00bcd4);
-      color: white;
-      text-align: center;
-      padding: 160px 30px;
+    p{margin-bottom:15px}
+    .grid{
+      display:grid;gap:20px;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     }
-    .hero h2 {
-      color: white;
-      border: none;
-      font-size: 2rem;
+    .card{
+      background:var(--light);
+      padding:20px;border-radius:10px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.05);
     }
-    footer {
-      background-color: #0a1f44;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
+    form{
+      display:grid;gap:15px;max-width:600px;margin:auto;
     }
-    input, textarea, button {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+    input,textarea{
+      width:100%;padding:12px;border-radius:8px;
+      border:1px solid #ccc;font-size:1rem;
     }
-    button {
-      background-color: #0a1f44;
-      color: white;
-      cursor: pointer;
-      border: none;
+    button[type=submit]{
+      background:var(--brand);color:#fff;border:none;
+      padding:12px;font-weight:bold;border-radius:8px;cursor:pointer;
+      transition:.2s;
     }
-    button:hover {
-      background-color: #00bcd4;
+    button[type=submit]:hover{background:#112f66}
+    footer{
+      background:var(--brand);color:#fff;text-align:center;
+      padding:20px;margin-top:40px;
     }
+    @media(max-width:600px){.nav{flex-wrap:wrap;justify-content:center}}
   </style>
 </head>
-
 <body>
   <header>
-    <h1>Agostina Costa | BDM - EBC Broker</h1>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#productos">Productos</a>
-      <a href="#promociones">Promociones</a>
-      <a href="#contacto">Contacto</a>
-      <button class="lang-switch" onclick="switchLang('es')">ES</button>
-      <button class="lang-switch" onclick="switchLang('en')">EN</button>
-    </nav>
+    <div class="nav">
+      <h1>Agostina Costa | BDM - EBC Broker</h1>
+      <nav>
+        <a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a>
+        <a href="#sobre" data-es="Sobre mí" data-en="About">Sobre mí</a>
+        <a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a href="#productos" data-es="Productos" data-en="Products">Productos</a>
+        <a href="#promos" data-es="Promociones" data-en="Promotions">Promociones</a>
+        <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+      </nav>
+      <div class="lang">
+        <button id="btnES">ES</button>
+        <button id="btnEN">EN</button>
+      </div>
+    </div>
   </header>
 
-  <section id="inicio" class="hero">
-    <h2>Your Strategic Partner in the Trading World</h2>
-    <p>I assist traders, investors, and Introducing Brokers in achieving consistent results, backed by EBC Financial Group — a globally regulated and award-winning broker.</p>
-  </section>
+  <main>
+    <section id="inicio" class="hero">
+      <h1 data-es="Tu Aliada Estratégica en el Mundo del Trading"
+          data-en="Your Strategic Partner in the Trading World">
+          Tu Aliada Estratégica en el Mundo del Trading
+      </h1>
+      <p data-es="Asesoro a traders, inversionistas e Introducing Brokers en LATAM e internacional, respaldada por EBC Financial Group — bróker global y regulado."
+         data-en="I assist traders, investors, and Introducing Brokers across LATAM and internationally, backed by EBC Financial Group — a globally regulated broker.">
+         Asesoro a traders, inversionistas e Introducing Brokers en LATAM e internacional, respaldada por EBC Financial Group — bróker global y regulado.
+      </p>
+    </section>
 
-  <section id="sobre-mi">
-    <h2>Sobre mí</h2>
-    <p>Soy Business Development Manager especializada en LATAM e internacional. Colaboro con EBC Broker, un bróker globalmente regulado y reconocido por su transparencia y servicio profesional.</p>
-  </section>
+    <section id="sobre">
+      <h2 data-es="Sobre mí" data-en="About Me">Sobre mí</h2>
+      <p data-es="Soy Business Development Manager especializada en LATAM e internacional. Colaboro con EBC Financial Group para ofrecer soluciones de trading seguras, personalizadas y rentables."
+         data-en="I’m a Business Development Manager specialized in LATAM and global markets, partnering with EBC Financial Group to deliver secure and profitable trading solutions.">
+         Soy Business Development Manager especializada en LATAM e internacional. Colaboro con EBC Financial Group para ofrecer soluciones de trading seguras, personalizadas y rentables.
+      </p>
+    </section>
 
-  <section id="servicios">
-    <h2>Servicios</h2>
-    <ul>
-      <li>Asesoría para apertura de cuentas</li>
-      <li>Programas de afiliados e Introducing Brokers (IBs)</li>
-      <li>Soluciones institucionales personalizadas</li>
-    </ul>
-  </section>
+    <section id="servicios">
+      <h2 data-es="Servicios" data-en="Services">Servicios</h2>
+      <div class="grid">
+        <div class="card">
+          <h3 data-es="Clientes Retail" data-en="Retail Clients">Clientes Retail</h3>
+          <p data-es="Asistencia integral para apertura de cuentas, soporte técnico y educativo, y gestión de riesgo."
+             data-en="Full assistance for account opening, technical and educational support, and risk management.">
+             Asistencia integral para apertura de cuentas, soporte técnico y educativo, y gestión de riesgo.
+          </p>
+        </div>
+        <div class="card">
+          <h3 data-es="Introducing Brokers" data-en="Introducing Brokers">Introducing Brokers</h3>
+          <p data-es="Programas de referidos, rebates y desarrollo de marca White Label con soporte estratégico."
+             data-en="Referral programs, rebates, and White Label brand development with strategic support.">
+             Programas de referidos, rebates y desarrollo de marca White Label con soporte estratégico.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <section id="productos">
-    <h2>Productos</h2>
-    <p>Acceso a Forex, CFDs, índices, materias primas, metales preciosos y criptomonedas bajo la infraestructura tecnológica de EBC Broker.</p>
-  </section>
+    <section id="productos">
+      <h2 data-es="Productos" data-en="Products">Productos</h2>
+      <div class="grid">
+        <div class="card"><h3>Forex</h3><p>Spreads competitivos y ejecución con liquidez de primer nivel.</p></div>
+        <div class="card"><h3>Índices</h3><p>Acceso global a los principales mercados bursátiles.</p></div>
+        <div class="card"><h3>Commodities</h3><p>Oro, petróleo, y activos energéticos con márgenes bajos.</p></div>
+      </div>
+    </section>
 
-  <section id="promociones">
-    <h2>Promociones</h2>
-    <p>Consulta las promociones vigentes para clientes retail e IBs. Contacta para recibir detalles actualizados.</p>
-  </section>
+    <section id="promos">
+      <h2 data-es="Promociones" data-en="Promotions">Promociones</h2>
+      <ul>
+        <li data-es="Programa de Referidos con bonos exclusivos." data-en="Referral Program with exclusive bonuses.">Programa de Referidos con bonos exclusivos.</li>
+        <li data-es="Rebates por volumen para traders e IBs." data-en="Volume rebates for traders and IBs.">Rebates por volumen para traders e IBs.</li>
+        <li data-es="Eventos y torneos con premios internacionales." data-en="Global trading tournaments and rewards.">Eventos y torneos con premios internacionales.</li>
+      </ul>
+    </section>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <form onsubmit="return validateForm(event)">
-      <input type="text" id="name" placeholder="Nombre" required>
-      <input type="email" id="email" placeholder="Correo electrónico" required>
-      <textarea id="message" placeholder="Mensaje" rows="5" required></textarea>
-      <button type="submit">Enviar mensaje</button>
-    </form>
-  </section>
+    <section id="contacto">
+      <h2 data-es="Contacto" data-en="Contact">Contacto</h2>
+      <p data-es="Completa el formulario para contactarte conmigo directamente." data-en="Fill out the form to contact me directly.">Completa el formulario para contactarte conmigo directamente.</p>
+      
+      <!-- 🔹 FORMULARIO REAL CON ENVÍO A EMAIL -->
+      <form action="https://formsubmit.co/agostinacosta@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_subject" value="Nuevo mensaje desde tu web de BDM - EBC Broker">
+        
+        <input type="text" name="Nombre" placeholder="Tu nombre" required>
+        <input type="email" name="Correo" placeholder="Tu correo electrónico" required>
+        <textarea name="Mensaje" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+        
+        <button type="submit">Enviar mensaje</button>
+      </form>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 Agostina Costa | Business Development Manager - EBC Financial Group</p>
+    <p>&copy; 2025 Agostina Costa | Business Development Manager – EBC Financial Group</p>
   </footer>
 
   <script>
-    // Efecto desplazamiento suave
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+    // --- CAMBIO DE IDIOMA ---
+    const btnES=document.getElementById('btnES');
+    const btnEN=document.getElementById('btnEN');
+    const elements=document.querySelectorAll('[data-es],[data-en]');
+    function switchLang(lang){
+      elements.forEach(el=>{
+        el.textContent=el.getAttribute(`data-${lang}`);
+        if(el.placeholder!==undefined && el.getAttribute(`data-${lang}-placeholder`))
+          el.placeholder=el.getAttribute(`data-${lang}-placeholder`);
       });
-    });
-
-    // Validación del formulario
-    function validateForm(event) {
-      alert("Mensaje enviado correctamente (modo demostración).");
-      event.preventDefault();
-      return false;
     }
+    btnES.onclick=()=>{switchLang('es');btnES.disabled=true;btnEN.disabled=false};
+    btnEN.onclick=()=>{switchLang('en');btnEN.disabled=true;btnES.disabled=false};
   </script>
-<script>
-function switchLang(lang) {
-  const elementsEs = document.querySelectorAll('[data-lang-es]');
-  const elementsEn = document.querySelectorAll('[data-lang-en]');
-  
-  if (lang === 'es') {
-    elementsEs.forEach(el => el.style.display = '');
-    elementsEn.forEach(el => el.style.display = 'none');
-  } else {
-    elementsEs.forEach(el => el.style.display = 'none');
-    elementsEn.forEach(el => el.style.display = '');
-  }
-}
-window.onload = () => switchLang('es');
-</script>
-      </body>
+</body>
 </html>
