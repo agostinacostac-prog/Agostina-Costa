@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agostina Costa | Business Development Manager - EBC Broker</title>
+  <title>Agostina Costa | BDM - EBC Broker</title>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -26,35 +29,36 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
     header h1 {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       margin: 0;
     }
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 15px;
+      margin: 0 12px;
       font-weight: 500;
-      transition: color 0.3s;
     }
     nav a:hover {
       color: #00bcd4;
+      transition: color 0.3s;
     }
     .lang-switch {
       background-color: #00bcd4;
       color: white;
       border: none;
-      padding: 5px 10px;
+      padding: 4px 10px;
       border-radius: 4px;
       cursor: pointer;
-      margin-left: 10px;
+      margin-left: 6px;
     }
     section {
-      padding: 100px 20px 60px;
-      max-width: 1000px;
+      padding: 100px 20px;
+      max-width: 900px;
       margin: auto;
     }
     h2 {
       color: #0a1f44;
+      margin-bottom: 15px;
       border-bottom: 2px solid #00bcd4;
       display: inline-block;
       padding-bottom: 5px;
@@ -63,22 +67,12 @@
       background: linear-gradient(to right, #0a1f44, #00bcd4);
       color: white;
       text-align: center;
-      padding: 140px 20px;
+      padding: 160px 30px;
     }
-    .hero h1 {
+    .hero h2 {
+      color: white;
+      border: none;
       font-size: 2rem;
-      margin-bottom: 10px;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: auto;
-    }
-    .services, .products, .promos, .contact {
-      background-color: #f9f9f9;
-      border-radius: 10px;
-      padding: 40px;
-      margin-top: 30px;
     }
     footer {
       background-color: #0a1f44;
@@ -87,108 +81,100 @@
       padding: 20px;
       font-size: 0.9rem;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: white;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin-top: 20px;
-    }
-    input, textarea {
+    input, textarea, button {
+      width: 100%;
       padding: 10px;
+      margin: 8px 0;
       border: 1px solid #ccc;
       border-radius: 5px;
-      font-size: 1rem;
     }
-    button[type="submit"] {
-      background-color: #00bcd4;
+    button {
+      background-color: #0a1f44;
       color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 1rem;
       cursor: pointer;
-      transition: background-color 0.3s;
+      border: none;
     }
-    button[type="submit"]:hover {
-      background-color: #0099b3;
-    }
-    @media (max-width: 768px) {
-      nav a { margin: 0 8px; }
-      .hero h1 { font-size: 1.5rem; }
-      section { padding: 80px 15px; }
+    button:hover {
+      background-color: #00bcd4;
     }
   </style>
-  <script>
-    function switchLang(lang) {
-      document.querySelectorAll('[data-lang]').forEach(el => {
-        el.style.display = el.dataset.lang === lang ? 'block' : 'none';
-      });
-
-      // Actualiza los textos del menú
-      document.querySelectorAll('#nav-menu a').forEach(el => {
-        el.textContent = lang === 'es' ? el.dataset.langEs : el.dataset.langEn;
-      });
-    }
-
-    function validateForm(e) {
-      e.preventDefault();
-      const name = e.target.querySelector('[id=name]').value.trim();
-      const email = e.target.querySelector('[id=email]').value.trim();
-      const message = e.target.querySelector('[id=message]').value.trim();
-      if (!name || !email || !message) {
-        alert('Por favor completa todos los campos / Please fill all fields.');
-        return;
-      }
-      if (!email.includes('@')) {
-        alert('Por favor ingresa un email válido / Please enter a valid email.');
-        return;
-      }
-      alert('Gracias por tu mensaje. Será respondido pronto / Thank you for your message. You will be contacted soon.');
-      e.target.reset();
-    }
-  </script>
 </head>
-<body onload="switchLang('es')">
 
+<body>
   <header>
     <h1>Agostina Costa | BDM - EBC Broker</h1>
-    <nav id="nav-menu">
-      <a href="#inicio" data-lang-es="Inicio" data-lang-en="Home">Inicio</a>
-      <a href="#sobre-mi" data-lang-es="Sobre mí" data-lang-en="About">Sobre mí</a>
-      <a href="#servicios" data-lang-es="Servicios" data-lang-en="Services">Servicios</a>
-      <a href="#productos" data-lang-es="Productos" data-lang-en="Products">Productos</a>
-      <a href="#promociones" data-lang-es="Promociones" data-lang-en="Promotions">Promociones</a>
-      <a href="#contacto" data-lang-es="Contacto" data-lang-en="Contact">Contacto</a>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#productos">Productos</a>
+      <a href="#promociones">Promociones</a>
+      <a href="#contacto">Contacto</a>
       <button class="lang-switch" onclick="switchLang('es')">ES</button>
       <button class="lang-switch" onclick="switchLang('en')">EN</button>
     </nav>
   </header>
 
-  <section class="hero" id="inicio">
-    <div data-lang="es">
-      <h1>Tu Aliada Estratégica en el Mundo del Trading</h1>
-      <p>Asesoro a traders, inversionistas e Introducing Brokers para alcanzar resultados sólidos, respaldados por EBC Financial Group, bróker global regulado y premiado internacionalmente.</p>
-    </div>
-    <div data-lang="en">
-      <h1>Your Strategic Partner in the Trading World</h1>
-      <p>I assist traders, investors, and Introducing Brokers in achieving consistent results, backed by EBC Financial Group — a globally regulated and award-winning broker.</p>
-    </div>
+  <section id="inicio" class="hero">
+    <h2>Your Strategic Partner in the Trading World</h2>
+    <p>I assist traders, investors, and Introducing Brokers in achieving consistent results, backed by EBC Financial Group — a globally regulated and award-winning broker.</p>
+  </section>
+
+  <section id="sobre-mi">
+    <h2>Sobre mí</h2>
+    <p>Soy Business Development Manager especializada en LATAM e internacional. Colaboro con EBC Broker, un bróker globalmente regulado y reconocido por su transparencia y servicio profesional.</p>
+  </section>
+
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <ul>
+      <li>Asesoría para apertura de cuentas</li>
+      <li>Programas de afiliados e Introducing Brokers (IBs)</li>
+      <li>Soluciones institucionales personalizadas</li>
+    </ul>
+  </section>
+
+  <section id="productos">
+    <h2>Productos</h2>
+    <p>Acceso a Forex, CFDs, índices, materias primas, metales preciosos y criptomonedas bajo la infraestructura tecnológica de EBC Broker.</p>
+  </section>
+
+  <section id="promociones">
+    <h2>Promociones</h2>
+    <p>Consulta las promociones vigentes para clientes retail e IBs. Contacta para recibir detalles actualizados.</p>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form onsubmit="return validateForm(event)">
+      <input type="text" id="name" placeholder="Nombre" required>
+      <input type="email" id="email" placeholder="Correo electrónico" required>
+      <textarea id="message" placeholder="Mensaje" rows="5" required></textarea>
+      <button type="submit">Enviar mensaje</button>
+    </form>
   </section>
 
   <footer>
-    <p>&copy; 2025 Agostina Costa | Business Development Manager - EBC Financial Group</p>
+    <p>© 2025 Agostina Costa | Business Development Manager - EBC Financial Group</p>
   </footer>
 
+  <script>
+    // Efecto desplazamiento suave
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Validación del formulario
+    function validateForm(event) {
+      alert("Mensaje enviado correctamente (modo demostración).");
+      event.preventDefault();
+      return false;
+    }
+  </script>
 </body>
 </html>
